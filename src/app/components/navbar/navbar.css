@@ -1,0 +1,94 @@
+.navbar-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background: rgba(5, 10, 21, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-container .left-section,
+.navbar-container .right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-container .search-input {
+    position: relative;
+}
+
+.navbar-container .search-input .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.navbar-container .search-input .glass-input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 10px 20px 10px 40px;
+    color: white;
+    width: 300px;
+    transition: all 0.3s;
+}
+
+.navbar-container .search-input .glass-input:focus {
+    border-color: var(--electric-blue);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    outline: none;
+}
+
+.navbar-container .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-container .user-menu .avatar-sm {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ff4081;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-container .icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.navbar-container .icon-btn:hover {
+    color: var(--electric-blue);
+}
+
+.navbar-container .icon-btn.logout {
+    color: #ff5252;
+    margin-left: 10px;
+}
+
+.navbar-container .icon-btn.logout:hover {
+    color: red;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}

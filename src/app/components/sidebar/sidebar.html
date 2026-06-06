@@ -1,0 +1,89 @@
+<nav class="sidebar-container glass-panel" [class.collapsed]="isCollapsed">
+
+  <!-- Botón para Colapsar/Abrir -->
+
+  <button class="toggle-btn" (click)="toggleSidebar()">
+
+    <i class="fa-solid" [class.fa-chevron-left]="!isCollapsed" [class.fa-chevron-right]="isCollapsed"></i>
+
+  </button>
+
+
+
+  <div class="user-profile">
+
+    <div class="avatar">RA</div>
+
+    <div class="user-details" *ngIf="!isCollapsed">
+
+      <h4>Rene Angelica</h4>
+
+      <p>Ingeniería en Sistemas</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="menu-list">
+
+    @for (item of menuItems; track item.label) {
+
+      <div class="menu-item-group">
+
+       <!--  @if (item.children) {
+
+          <button
+
+            class="menu-link"
+
+            (click)="toggleExpanded(item.label)"
+
+            [class.is-expanded]="expandedItem === item.label"
+
+            [title]="isCollapsed ? item.label : ''">
+
+            <i [class]="item.icon"></i>
+
+            <span class="label" *ngIf="!isCollapsed">{{ item.label }}</span>
+
+            <i class="fa-solid fa-chevron-down arrow-icon" *ngIf="!isCollapsed"></i>
+
+          </button>
+
+         
+
+          <div class="submenu" *ngIf="expandedItem === item.label && !isCollapsed">
+
+            @for (child of item.children; track child.label) {
+
+              <a [routerLink]="child.route" routerLinkActive="active" class="submenu-link">
+
+                {{ child.label }}
+
+              </a>
+
+            }
+
+          </div>
+
+        } @else { -->
+
+          <a [routerLink]="item.route" routerLinkActive="active" class="menu-link" [title]="isCollapsed ? item.label : ''">
+
+            <i [class]="item.icon"></i>
+
+            <span class="label" *ngIf="!isCollapsed">{{ item.label }}</span>
+
+          </a>
+
+        <!-- } -->
+
+      </div>
+
+    }
+
+  </div>
+
+</nav>
